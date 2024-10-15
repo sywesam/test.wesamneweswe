@@ -1,0 +1,109 @@
+let currentLanguage = 'ar';
+
+// حزم الترجمة
+const translations = {
+    ar: {
+        welcome: "أهلاً بكم في متجر الهدايا والتحف الفنية",
+        categories: "الفئات",
+        birthdayGifts: "هدايا أعياد الميلاد",
+        engagementGifts: "هدايا الخطوبة",
+        printingService: "خدمة الطباعة الليزرية",
+        accessories: "اكسسوارات هدايا ناعمة",
+        suggestions: "هل لديك اقتراح؟ ساعدنا وساهم معنا",
+        contactUs: "تواصل معنا",
+        policies: "السياسة والشروط",
+        programmedBy: "تمت البرمجة بواسطة wesam alsayd ali"
+    },
+    tr: {
+        welcome: "Hediyeler ve sanat eserleri mağazasına hoş geldiniz",
+        categories: "Kategoriler",
+        birthdayGifts: "Doğum Günü Hediyeleri",
+        engagementGifts: "Nişan Hediyeleri",
+        printingService: "Lazer Baskı Hizmeti",
+        accessories: "Nazik Hediye Aksesuarları",
+        suggestions: "Bir öneriniz var mı? Bizimle paylaşın",
+        contactUs: "Bize Ulaşın",
+        policies: "Politika ve Şartlar",
+        programmedBy: "Programcı: wesam alsayd ali"
+    },
+    en: {
+        welcome: "Welcome to the Gifts and Artifacts Store",
+        categories: "Categories",
+        birthdayGifts: "Birthday Gifts",
+        engagementGifts: "Engagement Gifts",
+        printingService: "Laser Printing Service",
+        accessories: "Soft Gift Accessories",
+        suggestions: "Do you have a suggestion? Help us contribute",
+        contactUs: "Contact Us",
+        policies: "Policies and Terms",
+        programmedBy: "Programmed by wesam alsayd ali"
+    }
+};
+
+function setLanguage(lang) {
+    currentLanguage = lang;
+    updateText();
+}
+
+function updateText() {
+    document.querySelector("h1").innerText = translations[currentLanguage].welcome;
+    document.querySelector(".categories h2").innerText = translations[currentLanguage].categories;
+
+    const categoryButtons = document.querySelectorAll(".categories button");
+    categoryButtons[0].innerText = translations[currentLanguage].birthdayGifts;
+    categoryButtons[1].innerText = translations[currentLanguage].engagementGifts;
+    categoryButtons[2].innerText = translations[currentLanguage].printingService;
+    categoryButtons[3].innerText = translations[currentLanguage].accessories;
+    categoryButtons[4].innerText = translations[currentLanguage].suggestions;
+    categoryButtons[5].innerText = translations[currentLanguage].contactUs;
+
+    document.querySelector(".policies a").innerText = translations[currentLanguage].policies;
+    document.querySelector("footer p").innerText = translations[currentLanguage].programmedBy;
+}
+
+function openCategory(category) {
+    switch (category) {
+        case 'birthday':
+            openBirthdayGifts();
+            break;
+        case 'engagement':
+            openEngagementGifts();
+            break;
+        case 'printing':
+            openPrintingService();
+            break;
+        case 'accessories':
+            openAccessories();
+            break;
+        case 'suggestions':
+            openSuggestions();
+            break;
+    }
+}
+
+function openBirthdayGifts() {
+    alert(translations[currentLanguage].birthdayGifts);
+}
+
+function openEngagementGifts() {
+    alert(translations[currentLanguage].engagementGifts);
+}
+
+function openPrintingService() {
+    alert(translations[currentLanguage].printingService);
+}
+
+function openAccessories() {
+    alert(translations[currentLanguage].accessories);
+}
+
+function openSuggestions() {
+    alert(translations[currentLanguage].suggestions);
+}
+
+function contactUs() {
+    window.location.href = "mailto:example@example.com"; // استبدل البريد الإلكتروني هنا
+}
+
+// تعيين اللغة الافتراضية عند تحميل الصفحة
+window.onload = updateText;

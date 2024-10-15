@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EsWe - متجر الهدايا والتحف الفنية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- عنصر خلفية الفيديو -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="https://i.imgur.com/RBYfqIf.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+    </div>
+
+    <!-- الحاوية الرئيسية لتطبيقك -->
+    <div class="container">
+        <header>
+            <h1>أهلاً بكم في متجر الهدايا والتحف الفنية</h1>
+            <div class="language-buttons">
+                <!-- أزرار تغيير اللغة -->
+                <button onclick="setLanguage('ar')">العربية</button>
+                <button onclick="setLanguage('tr')">تركية</button>
+                <button onclick="setLanguage('en')">إنكليزية</button>
+            </div>
+            <div class="policies">
+                <a href="#terms">السياسة والشروط</a> <!-- رابط السياسة والشروط -->
+            </div>
+        </header>
+        
+        <main>
+            <section class="categories">
+                <h2>الفئات</h2> <!-- عنوان الفئات -->
+                <!-- أزرار الفئات -->
+                <button onclick="openCategory('birthday')">هدايا أعياد الميلاد</button>
+                <button onclick="openCategory('engagement')">هدايا الخطوبة</button>
+                <button onclick="openCategory('printing')">خدمة الطباعة الليزرية</button>
+                <button onclick="openCategory('accessories')">اكسسوارات هدايا ناعمة</button>
+                <button onclick="openCategory('suggestions')">هل لديك اقتراح؟ ساعدنا وساهم معنا</button>
+                <button onclick="contactUs()">تواصل معنا</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>تمت البرمجة بواسطة wesam alsayd ali</p> <!-- نص مطور التطبيق -->
+        </footer>
+    </div>
+
+    <script src="script.js"></script> <!-- تحميل ملف JavaScript -->
+</body>
+</html>
